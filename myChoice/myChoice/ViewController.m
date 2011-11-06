@@ -22,6 +22,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [self.navigationController setNavigationBarHidden:YES];
 }
 
 - (void)viewDidUnload
@@ -55,6 +56,18 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+- (void)loadScanner:(id)sender{
+    UIImagePickerController *cameraController = [[UIImagePickerController alloc] init];
+    [cameraController setDelegate:self];
+    [cameraController setSourceType:UIImagePickerControllerSourceTypeCamera];
+    [cameraController setCameraCaptureMode:UIImagePickerControllerCameraCaptureModePhoto];
+    [cameraController setCameraDevice:UIImagePickerControllerCameraDeviceRear];
+    [cameraController setEditing:TRUE animated:YES];
+    [cameraController setVideoQuality:UIImagePickerControllerQualityTypeHigh];
+    
+    [self presentModalViewController:cameraController animated:YES];
 }
 
 @end

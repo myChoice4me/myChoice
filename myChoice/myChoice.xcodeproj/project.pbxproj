@@ -20,6 +20,7 @@
 		2800CFF71463451C007E8673 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2800CFD81463451C007E8673 /* Foundation.framework */; };
 		2800CFFF1463451C007E8673 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2800CFFD1463451C007E8673 /* InfoPlist.strings */; };
 		2800D0021463451C007E8673 /* myChoiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2800D0011463451C007E8673 /* myChoiceTests.m */; };
+		2837988C146705C0002C60E7 /* mainbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2837988B146705C0002C60E7 /* mainbg.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		2800CFFE1463451C007E8673 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2800D0001463451C007E8673 /* myChoiceTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myChoiceTests.h; sourceTree = "<group>"; };
 		2800D0011463451C007E8673 /* myChoiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myChoiceTests.m; sourceTree = "<group>"; };
+		2837988B146705C0002C60E7 /* mainbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainbg.png; path = images/mainbg.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		2800CFDC1463451C007E8673 /* myChoice */ = {
 			isa = PBXGroup;
 			children = (
+				2837988A146705A7002C60E7 /* images */,
 				2800CFE51463451C007E8673 /* AppDelegate.h */,
 				2800CFE61463451C007E8673 /* AppDelegate.m */,
 				2800CFE81463451C007E8673 /* ViewController.h */,
@@ -149,6 +152,14 @@
 				2800CFFD1463451C007E8673 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2837988A146705A7002C60E7 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				2837988B146705C0002C60E7 /* mainbg.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +235,7 @@
 			files = (
 				2800CFE11463451C007E8673 /* InfoPlist.strings in Resources */,
 				2800CFED1463451C007E8673 /* ViewController.xib in Resources */,
+				2837988C146705C0002C60E7 /* mainbg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +442,7 @@
 				2800D0071463451C007E8673 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2800D0081463451C007E8673 /* Build configuration list for PBXNativeTarget "myChoiceTests" */ = {
 			isa = XCConfigurationList;
@@ -438,6 +451,7 @@
 				2800D00A1463451C007E8673 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
