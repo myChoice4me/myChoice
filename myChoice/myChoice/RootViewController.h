@@ -15,4 +15,7 @@
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 
+- (void)hideNavigation;
+- (void)showNavigation;
+
 @end

@@ -51,6 +51,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIBarButtonItem *backBtn = [[UIBarButtonItem alloc] initWithTitle:@"myChoice" style:UIBarButtonItemStyleBordered target:self.navigationController action:@selector(popViewControllerAnimated:)];
+    
+    [self.navigationItem setBackBarButtonItem:backBtn];
 }
 
 - (void)viewDidUnload
@@ -104,6 +108,16 @@
 #pragma mark -
 #pragma mark - Tableview Delegate
 
+- (void)hideNavigation{
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
+- (void)showNavigation{
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
+    [self performSelector:@selector(hideNavigation) withObject:nil afterDelay:0.7];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     [self.pageViewController setDelegate:self];
@@ -125,8 +139,13 @@
     [self.pageViewController didMoveToParentViewController:self];
     
     [self.view setGestureRecognizers:self.pageViewController.gestureRecognizers];
+    [self performSelector:@selector(hideNavigation) withObject:nil afterDelay:0.7];
     
+    UISwipeGestureRecognizer *swipeDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(showNavigation)];
+    [swipeDown setDirection:UISwipeGestureRecognizerDirectionDown];
+    [swipeDown setEnabled:TRUE];
     
+    [self.pageViewController.view addGestureRecognizer:swipeDown];
 }
 
 - (ModelController *)modelController{
